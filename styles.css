@@ -1,0 +1,1222 @@
+
+/* ==========================================
+   LAS TÍAS CAMPESTRE
+   FESTIVAL DEL GLOBO
+   STYLES.CSS - VERSIÓN 2
+========================================== */
+
+/* IDENTIDAD DE MARCA */
+
+:root {
+  --naranja: #da783c;
+  --naranja-oscuro: #bd5428;
+  --durazno: #f5b17a;
+  --cafe: #522b1c;
+  --cafe-profundo: #331a12;
+  --crema: #fff9ef;
+  --vainilla: #f7e7cb;
+  --amarillo: #ffc64b;
+  --cielo: #9ddfee;
+  --cielo-claro: #dff5f7;
+  --blanco: #fff;
+
+  --fuente-titulos: 'Fredoka', sans-serif;
+  --fuente-textos: 'Nunito', sans-serif;
+
+  --radio: 24px;
+  --sombra: 0 14px 34px rgba(82,43,28,.13);
+}
+
+
+/* ==========================================
+   01. ESTILOS GENERALES
+========================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 86px;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  color: var(--cafe);
+  background: var(--crema);
+  font-family: var(--fuente-textos);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--fuente-titulos);
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--amarillo);
+  outline-offset: 4px;
+}
+
+::selection {
+  background: var(--amarillo);
+  color: var(--cafe);
+}
+
+
+/* ==========================================
+   02. HEADER
+========================================== */
+
+.header-las-tias {
+  position: relative;
+  z-index: 50;
+
+  background: rgba(255,249,239,.97);
+  border-bottom: 3px solid var(--naranja);
+
+  box-shadow:
+    0 4px 18px rgba(82,43,28,.06);
+}
+
+.logo-header {
+  display: inline-flex;
+  align-items: center;
+}
+
+.logo-header img {
+  width: 134px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* REDES SOCIALES */
+
+.redes-header a,
+.redes-footer a {
+  display: grid;
+  place-items: center;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  transition:
+    transform .25s ease,
+    background-color .25s ease;
+}
+
+.redes-header a {
+  background: #fff;
+  color: var(--naranja-oscuro);
+
+  border: 1.5px solid #edd2b9;
+
+  font-size: 20px;
+
+  box-shadow:
+    0 3px 9px rgba(82,43,28,.06);
+}
+
+.redes-header a:hover {
+  transform: translateY(-3px);
+  background: var(--amarillo);
+}
+
+.redes-header a[aria-disabled="true"] {
+  pointer-events: none;
+}
+
+
+/* ==========================================
+   03. PORTADA PRINCIPAL
+========================================== */
+
+.hero-las-tias {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  min-height: 545px;
+
+  display: grid;
+  align-items: center;
+
+  padding: 75px 0 105px;
+
+  background:
+    radial-gradient(
+      circle at 82% 13%,
+      rgba(255,255,255,.85) 0 40px,
+      transparent 140px
+    ),
+    radial-gradient(
+      circle at 13% 65%,
+      rgba(255,255,255,.30),
+      transparent 210px
+    ),
+    linear-gradient(
+      180deg,
+      #a5e2ed 0%,
+      #c9eef0 48%,
+      #f3f5e8 82%,
+      #fff9ef 100%
+    );
+}
+
+/* NUBES DE TRANSICIÓN */
+
+.hero-las-tias::after {
+  content: '';
+
+  position: absolute;
+  z-index: 1;
+
+  bottom: -2px;
+  left: 0;
+
+  width: 100%;
+  height: 84px;
+
+  background:
+    radial-gradient(
+      circle at 6% 94%,
+      var(--crema) 57px,
+      transparent 58px
+    ),
+    radial-gradient(
+      circle at 27% 111%,
+      var(--crema) 85px,
+      transparent 86px
+    ),
+    radial-gradient(
+      circle at 52% 108%,
+      var(--crema) 68px,
+      transparent 69px
+    ),
+    radial-gradient(
+      circle at 76% 107%,
+      var(--crema) 90px,
+      transparent 91px
+    ),
+    radial-gradient(
+      circle at 101% 94%,
+      var(--crema) 68px,
+      transparent 69px
+    ),
+    linear-gradient(
+      to bottom,
+      transparent 70%,
+      var(--crema) 71%
+    );
+
+  pointer-events: none;
+}
+
+.hero-las-tias .container {
+  position: relative;
+  z-index: 3;
+}
+
+
+/* ETIQUETA FESTIVAL */
+
+.etiqueta-festival {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  max-width: 100%;
+
+  padding: 10px 17px;
+  margin-bottom: 20px;
+
+  border-radius: 30px;
+
+  background: #fff9eb;
+  border: 1.5px solid #f2c77a;
+
+  box-shadow:
+    0 7px 17px rgba(82,43,28,.09);
+
+  color: var(--cafe);
+
+  font-family: var(--fuente-titulos);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.4;
+
+  letter-spacing: .35px;
+}
+
+
+/* TÍTULO PRINCIPAL */
+
+.titulo-principal {
+  max-width: 560px;
+
+  margin: 0 auto 20px;
+
+  color: var(--cafe-profundo);
+
+  font-size: clamp(38px, 10vw, 68px);
+  font-weight: 650;
+  line-height: 1.05;
+  letter-spacing: -.9px;
+
+  text-wrap: balance;
+
+  text-shadow:
+    0 2px 0 rgba(255,255,255,.68);
+}
+
+
+/* DESCRIPCIÓN */
+
+.descripcion-principal {
+  max-width: 430px;
+
+  margin: 0 auto 28px;
+
+  font-size: clamp(15px, 4vw, 19px);
+  line-height: 1.6;
+  font-weight: 750;
+}
+
+.descripcion-principal span {
+  color: var(--naranja-oscuro);
+  font-weight: 900;
+}
+
+
+/* BOTÓN PRINCIPAL */
+
+.btn-las-tias {
+  position: relative;
+  overflow: hidden;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: min(100%, 355px);
+  min-height: 58px;
+
+  padding: 14px 21px;
+
+  border: 2px solid #ab4920;
+  border-radius: 17px;
+
+  color: var(--blanco);
+
+  background:
+    linear-gradient(
+      180deg,
+      #e98b46,
+      #cb5e2b
+    );
+
+  box-shadow:
+    0 6px 0 #a94b26,
+    0 13px 27px rgba(158,76,40,.19);
+
+  font-family: var(--fuente-titulos);
+  font-size: 18px;
+  font-weight: 650;
+  line-height: 1.3;
+
+  transition:
+    transform .22s ease,
+    box-shadow .22s ease,
+    filter .22s ease;
+}
+
+.btn-las-tias:hover {
+  color: #fff;
+  filter: saturate(1.1);
+  transform: translateY(-3px);
+}
+
+.btn-las-tias:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #a94b26;
+}
+
+
+/* ==========================================
+   04. GLOBOS AEROSTÁTICOS
+========================================== */
+
+.globos-fondo {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.globo {
+  position: absolute;
+
+  width: 56px;
+  height: 86px;
+
+  transform-origin: center 60%;
+
+  opacity: .83;
+
+  filter:
+    drop-shadow(
+      0 5px 5px rgba(49,81,85,.12)
+    );
+
+  animation:
+    lt-flotar 6s ease-in-out infinite;
+}
+
+
+/* CUERPO DEL GLOBO */
+
+.globo::before {
+  content: '';
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 76%;
+
+  border-radius:
+    48% 48% 44% 44% /
+    36% 36% 64% 64%;
+
+  background:
+    linear-gradient(
+      90deg,
+      #d96739 0 19%,
+      #f6a94b 19% 37%,
+      #ffe7ab 37% 51%,
+      #f6a94b 51% 70%,
+      #d96739 70% 85%,
+      #ad512e 85%
+    );
+
+  border:
+    1px solid rgba(103,58,37,.19);
+
+  box-shadow:
+    inset -6px -5px 10px rgba(92,49,26,.13),
+    inset 5px 2px 8px rgba(255,255,255,.27);
+}
+
+
+/* CANASTILLA */
+
+.globo::after {
+  content: '';
+
+  position: absolute;
+
+  top: 78%;
+  left: 36%;
+
+  width: 28%;
+  height: 12%;
+
+  border-radius: 0 0 3px 3px;
+
+  border: 1px solid #6b4125;
+
+  background:
+    repeating-linear-gradient(
+      0deg,
+      #a26e43,
+      #a26e43 3px,
+      #805432 4px
+    );
+
+  box-shadow:
+    0 -8px 0 -6px #71401f;
+}
+
+
+/* POSICIÓN DE GLOBOS */
+
+.globo-1 {
+  top: 11%;
+  right: 6%;
+  animation-delay: -1s;
+}
+
+.globo-2 {
+  top: 57%;
+  left: 5%;
+
+  scale: .60;
+  opacity: .5;
+
+  animation-delay: -2.7s;
+}
+
+.globo-3 {
+  top: 69%;
+  right: 11%;
+
+  scale: .48;
+  opacity: .46;
+
+  animation-delay: -4s;
+}
+
+
+/* ANIMACIÓN FLOTANTE */
+
+@keyframes lt-flotar {
+
+  0%, 100% {
+    translate: 0 0;
+    rotate: -2deg;
+  }
+
+  50% {
+    translate: 0 -16px;
+    rotate: 2deg;
+  }
+
+}
+
+
+/* ==========================================
+   05. FOTOGRAFÍA GASTRONÓMICA
+========================================== */
+
+.seccion-comida {
+  position: relative;
+  z-index: 4;
+
+  padding: 8px 0 75px;
+
+  background: var(--crema);
+}
+
+.fotografia-platillo {
+  position: relative;
+
+  max-width: 710px;
+  margin: 0 auto;
+
+  border: 6px solid #fff;
+  border-radius: 26px;
+
+  box-shadow:
+    0 14px 0 -7px #f3b77c,
+    var(--sombra);
+
+  overflow: hidden;
+
+  background: #efd6bb;
+}
+
+.fotografia-platillo img {
+  width: 100%;
+
+  height: clamp(235px, 65vw, 430px);
+
+  object-fit: cover;
+  object-position: center;
+
+  transition: transform .8s ease;
+}
+
+
+/* SELLO DECORATIVO */
+
+.fotografia-platillo::before {
+  content: '¡QUÉ ANTOJO!';
+
+  position: absolute;
+  z-index: 2;
+
+  top: 15px;
+  right: 14px;
+
+  padding: 8px 11px;
+
+  border-radius: 8px;
+
+  transform: rotate(4deg);
+
+  background: var(--amarillo);
+  color: var(--cafe);
+
+  box-shadow:
+    0 4px 10px rgba(0,0,0,.13);
+
+  font-family: var(--fuente-titulos);
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: .4px;
+}
+
+
+/* SOMBRA SOBRE FOTO */
+
+.fotografia-platillo::after {
+  content: '';
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent 68%,
+      rgba(51,26,18,.15)
+    );
+}
+
+
+/* TÍTULOS DE SECCIÓN */
+
+.titulo-seccion {
+  max-width: 500px;
+
+  margin: 0 auto 12px;
+
+  color: var(--cafe-profundo);
+
+  font-size: clamp(30px, 7.6vw, 42px);
+  font-weight: 650;
+  line-height: 1.12;
+
+  text-wrap: balance;
+}
+
+.texto-seccion {
+  max-width: 450px;
+
+  margin: 0 auto;
+
+  color: #7b533f;
+
+  font-size: 16px;
+  font-weight: 750;
+  line-height: 1.6;
+}
+
+
+/* ==========================================
+   06. CUPÓN DE DESCUENTO
+========================================== */
+
+.seccion-descuento {
+  padding: 80px 0;
+
+  background:
+    radial-gradient(
+      circle at 6% 20%,
+      rgba(255,198,75,.27) 0 45px,
+      transparent 46px
+    ),
+    radial-gradient(
+      circle at 96% 83%,
+      rgba(218,120,60,.14) 0 56px,
+      transparent 57px
+    ),
+    linear-gradient(
+      180deg,
+      #f4ddc0,
+      #fff2df
+    );
+}
+
+
+/* TARJETA ESTILO BOLETO */
+
+.tarjeta-descuento {
+  position: relative;
+  overflow: hidden;
+
+  padding: 38px 20px 34px;
+
+  border-radius: 27px;
+  border: 2px solid #e8ad74;
+
+  outline:
+    7px solid rgba(255,255,255,.42);
+
+  background:
+    repeating-linear-gradient(
+      135deg,
+      rgba(219,144,87,.035) 0 7px,
+      transparent 7px 17px
+    ),
+    #fffdfa;
+
+  box-shadow:
+    0 17px 35px rgba(103,53,30,.18);
+}
+
+
+/* MUESCAS DE BOLETO */
+
+.tarjeta-descuento::before,
+.tarjeta-descuento::after {
+  content: '';
+
+  position: absolute;
+  z-index: 2;
+
+  top: 51%;
+
+  width: 29px;
+  height: 49px;
+
+  background: #f8e7d0;
+
+  border: 2px solid #e8ad74;
+  border-radius: 50%;
+}
+
+.tarjeta-descuento::before {
+  left: -19px;
+}
+
+.tarjeta-descuento::after {
+  right: -19px;
+}
+
+
+/* ENCABEZADO CUPÓN */
+
+.encabezado-descuento {
+  display: inline-block;
+
+  padding: 9px 15px;
+  margin-bottom: 22px;
+
+  border-radius: 20px;
+
+  background: #fff0d7;
+  border: 1px solid #f2c58c;
+
+  color: var(--naranja-oscuro);
+
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .6px;
+}
+
+
+/* TÍTULO PROMOCIÓN */
+
+.titulo-descuento {
+  max-width: 400px;
+
+  margin: 0 auto 15px;
+
+  font-size: clamp(26px, 7vw, 38px);
+  font-weight: 650;
+  line-height: 1.16;
+
+  text-wrap: balance;
+}
+
+
+/* NÚMERO 10% */
+
+.numero-descuento {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  margin: 7px 0 0;
+
+  color: var(--naranja-oscuro);
+
+  font-family: var(--fuente-titulos);
+  font-size: clamp(98px, 27vw, 170px);
+  font-weight: 700;
+  line-height: .98;
+
+  letter-spacing: -5px;
+
+  text-shadow:
+    3px 4px 0 #fce1bb;
+}
+
+.numero-descuento span {
+  font-size: .45em;
+  margin-top: .18em;
+  letter-spacing: -2px;
+}
+
+
+/* TEXTO DE DESCUENTO */
+
+.texto-descuento {
+  margin: 0 0 16px;
+
+  font-size: clamp(25px, 7vw, 33px);
+  font-weight: 700;
+  letter-spacing: .6px;
+
+  color: var(--cafe);
+}
+
+
+/* DETALLES DE PROMOCIÓN */
+
+.detalle-descuento {
+  max-width: 290px;
+
+  margin: 0 auto 26px;
+
+  font-size: 17px;
+  line-height: 1.55;
+  font-weight: 850;
+}
+
+
+/* INSTRUCCIONES DEL CUPÓN */
+
+.instrucciones-cupon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 9px;
+
+  max-width: 405px;
+  margin: auto;
+
+  padding: 20px 16px;
+
+  border-radius: 16px;
+
+  border: 1.5px dashed #dc944e;
+
+  background: #fff4df;
+}
+
+.instrucciones-cupon i {
+  font-size: 34px;
+  line-height: 1;
+
+  color: var(--naranja-oscuro);
+}
+
+.instrucciones-cupon p {
+  max-width: 310px;
+
+  font-size: 15px;
+  font-weight: 850;
+  line-height: 1.5;
+}
+
+
+/* SELLO DEL FESTIVAL */
+
+.sello-promocion {
+  display: inline-block;
+
+  margin-top: 22px;
+
+  padding: 10px 16px;
+
+  border-radius: 10px;
+
+  background: var(--cafe);
+  color: #fff;
+
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1.5;
+  letter-spacing: .5px;
+}
+
+
+/* ==========================================
+   07. GOOGLE MAPS
+========================================== */
+
+.seccion-ubicacion {
+  padding: 75px 0 85px;
+  background: #fff9ef;
+}
+
+.subtitulo-ubicacion {
+  display: inline-block;
+
+  margin-bottom: 15px;
+
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1px;
+
+  color: var(--naranja-oscuro);
+}
+
+.direccion {
+  margin: 14px 0 25px;
+
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.6;
+}
+
+.direccion i {
+  color: var(--naranja-oscuro);
+  margin-right: 5px;
+}
+
+
+/* CONTENEDOR DEL MAPA */
+
+.contenedor-mapa {
+  overflow: hidden;
+
+  max-width: 850px;
+  margin: auto;
+
+  border-radius: 24px;
+  border: 5px solid #fff;
+
+  box-shadow: var(--sombra);
+
+  background: #e8e9e5;
+}
+
+.contenedor-mapa iframe {
+  display: block;
+
+  width: 100%;
+  height: 300px;
+
+  border: 0;
+}
+
+
+/* BOTÓN MAPS */
+
+.btn-maps {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 57px;
+  width: min(100%, 430px);
+
+  padding: 14px 18px;
+
+  border-radius: 16px;
+
+  background: var(--cafe);
+  color: #fff;
+
+  font-family: var(--fuente-titulos);
+  font-size: 17px;
+  font-weight: 650;
+  line-height: 1.3;
+
+  box-shadow: 0 5px 0 #321b12;
+
+  transition:
+    transform .2s ease,
+    background .2s ease;
+}
+
+.btn-maps:hover {
+  color: #fff;
+  background: var(--naranja-oscuro);
+  transform: translateY(-3px);
+}
+
+.btn-maps:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #321b12;
+}
+
+
+/* ==========================================
+   08. FOOTER
+========================================== */
+
+.footer-las-tias {
+  position: relative;
+
+  padding: 48px 20px 32px;
+
+  background: var(--cafe-profundo);
+  color: #fff;
+
+  text-align: center;
+}
+
+.footer-las-tias::before {
+  content: '';
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 7px;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      var(--naranja) 0 28px,
+      var(--amarillo) 28px 40px,
+      #f0a16e 40px 54px
+    );
+}
+
+
+/* LOGO FOOTER */
+
+.logo-footer {
+  width: 155px;
+  height: auto;
+
+  margin: 0 auto;
+  padding: 10px;
+
+  border-radius: 18px;
+
+  background: #fff9ee;
+}
+
+
+/* FRASE FOOTER */
+
+.frase-footer {
+  max-width: 320px;
+
+  margin: 22px auto;
+
+  color: #ffebd5;
+
+  font-family: var(--fuente-titulos);
+  font-size: 21px;
+  font-weight: 550;
+  line-height: 1.35;
+}
+
+
+/* REDES FOOTER */
+
+.redes-footer a {
+  width: 48px;
+  height: 48px;
+
+  background: #fff7ea;
+  color: var(--cafe);
+
+  font-size: 21px;
+}
+
+.redes-footer a:hover {
+  background: var(--amarillo);
+  transform: translateY(-3px);
+}
+
+.copyright {
+  margin-top: 28px;
+
+  font-size: 12px;
+  color: #e4c7b4;
+}
+
+
+/* ==========================================
+   09. ANIMACIONES DE ENTRADA
+========================================== */
+
+.js-animations [data-animate] {
+  opacity: 0;
+
+  transform: translateY(25px);
+
+  transition:
+    opacity .72s ease,
+    transform .72s cubic-bezier(.2,.75,.2,1);
+}
+
+.js-animations [data-animate="zoom-in"] {
+  transform: scale(.94);
+}
+
+.js-animations [data-animate].is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+
+/* ==========================================
+   10. RESPONSIVE TABLETS
+========================================== */
+
+@media (min-width: 768px) {
+
+  .logo-header img {
+    width: 160px;
+  }
+
+  .hero-las-tias {
+    min-height: 630px;
+    padding: 105px 0 130px;
+  }
+
+  .hero-las-tias::after {
+    height: 105px;
+  }
+
+  .etiqueta-festival {
+    font-size: 13px;
+  }
+
+  .globo-1 {
+    scale: 1.3;
+    right: 13%;
+  }
+
+  .globo-2 {
+    scale: .9;
+    left: 14%;
+  }
+
+  .globo-3 {
+    scale: .68;
+    right: 15%;
+  }
+
+  .fotografia-platillo {
+    border-width: 8px;
+  }
+
+  .seccion-comida {
+    padding-bottom: 95px;
+  }
+
+  .tarjeta-descuento {
+    padding: 50px 48px 43px;
+  }
+
+  .contenedor-mapa iframe {
+    height: 360px;
+  }
+
+}
+
+
+/* ==========================================
+   11. RESPONSIVE COMPUTADORAS
+========================================== */
+
+@media (min-width: 992px) {
+
+  .hero-las-tias {
+    min-height: 680px;
+  }
+
+  .fotografia-platillo:hover img {
+    transform: scale(1.04);
+  }
+
+  .seccion-descuento {
+    padding: 105px 0;
+  }
+
+  .seccion-ubicacion {
+    padding: 100px 0;
+  }
+
+}
+
+
+/* ==========================================
+   12. CELULARES PEQUEÑOS
+========================================== */
+
+@media (max-width: 360px) {
+
+  .logo-header img {
+    width: 112px;
+  }
+
+  .redes-header a {
+    width: 36px;
+    height: 36px;
+    font-size: 17px;
+  }
+
+  .titulo-principal {
+    font-size: 35px;
+  }
+
+  .hero-las-tias {
+    padding-top: 64px;
+  }
+
+  .numero-descuento {
+    font-size: 94px;
+  }
+
+  .tarjeta-descuento {
+    padding: 30px 15px;
+  }
+
+}
+
+
+/* ==========================================
+   13. ACCESIBILIDAD
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .js-animations [data-animate] {
+    opacity: 1;
+    transform: none;
+  }
+
+}
