@@ -1,36 +1,47 @@
 
-/* ==========================================
+/* =========================================
    LAS TÍAS CAMPESTRE
    FESTIVAL DEL GLOBO
-   STYLES.CSS - VERSIÓN 2
-========================================== */
+   LANDING PAGE - STYLES.CSS
+   MOBILE FIRST
+========================================= */
 
-/* IDENTIDAD DE MARCA */
+
+/* =========================================
+   01. IDENTIDAD VISUAL
+========================================= */
 
 :root {
-  --naranja: #da783c;
-  --naranja-oscuro: #bd5428;
-  --durazno: #f5b17a;
-  --cafe: #522b1c;
-  --cafe-profundo: #331a12;
+  --naranja: #ed7625;
+  --naranja-oscuro: #c95218;
+  --naranja-claro: #fa9b42;
+
+  --amarillo: #ffc43b;
+  --amarillo-claro: #ffe09a;
+
+  --cafe: #472716;
+  --cafe-oscuro: #321b10;
+  --cafe-claro: #80513a;
+
   --crema: #fff9ef;
-  --vainilla: #f7e7cb;
-  --amarillo: #ffc64b;
-  --cielo: #9ddfee;
-  --cielo-claro: #dff5f7;
-  --blanco: #fff;
+  --crema-oscuro: #f7ead8;
+  --blanco: #ffffff;
 
-  --fuente-titulos: 'Fredoka', sans-serif;
-  --fuente-textos: 'Nunito', sans-serif;
+  --fuente-titulo: "Lilita One", sans-serif;
+  --fuente-secundaria: "Fredoka", sans-serif;
+  --fuente-texto: "Nunito", sans-serif;
 
-  --radio: 24px;
-  --sombra: 0 14px 34px rgba(82,43,28,.13);
+  --sombra-suave:
+    0 12px 30px rgba(71,39,22,.12);
+
+  --sombra-profunda:
+    0 20px 45px rgba(71,39,22,.20);
 }
 
 
-/* ==========================================
-   01. ESTILOS GENERALES
-========================================== */
+/* =========================================
+   02. ESTILOS GENERALES
+========================================= */
 
 *,
 *::before,
@@ -40,36 +51,45 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 86px;
+  scroll-padding-top: 110px;
 }
 
 body {
   margin: 0;
+  padding: 0;
   overflow-x: hidden;
-  color: var(--cafe);
+
   background: var(--crema);
-  font-family: var(--fuente-textos);
+  color: var(--cafe);
+
+  font-family: var(--fuente-texto);
   -webkit-font-smoothing: antialiased;
 }
 
-img {
-  display: block;
-  max-width: 100%;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--fuente-titulo);
+  margin: 0;
+}
+
+p {
+  margin: 0;
 }
 
 a {
   text-decoration: none;
 }
 
-p {
-  margin-bottom: 0;
+img {
+  max-width: 100%;
+  display: block;
 }
 
-h1, h2, h3, h4 {
-  font-family: var(--fuente-titulos);
-}
-
-button, a {
+button,
+a {
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -85,1121 +105,1410 @@ button:focus-visible {
 }
 
 
-/* ==========================================
-   02. HEADER
-========================================== */
+/* =========================================
+   03. HEADER FLOTANTE
+========================================= */
 
-.header-las-tias {
-  position: relative;
-  z-index: 50;
+.site-header {
+  position: fixed;
+
+  top: 12px;
+  left: 0;
+
+  width: 100%;
+  z-index: 1000;
+
+  pointer-events: none;
+}
+
+.site-header .container {
+  max-width: 1100px;
+}
+
+.navbar-las-tias {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 9px 15px;
 
   background: rgba(255,249,239,.97);
-  border-bottom: 3px solid var(--naranja);
+
+  border: 1px solid rgba(255,255,255,.8);
+  border-radius: 100px;
 
   box-shadow:
-    0 4px 18px rgba(82,43,28,.06);
+    0 8px 30px rgba(71,39,22,.14);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  pointer-events: auto;
 }
 
-.logo-header {
-  display: inline-flex;
+
+/* LOGO ORIGINAL */
+
+.nav-logo {
+  display: flex;
   align-items: center;
+
+  min-width: 0;
 }
 
-.logo-header img {
-  width: 134px;
+
+/* LOGO DEL HEADER */
+
+.nav-logo img {
+  width: 155px;
+  max-height: 75px;
   height: auto;
   object-fit: contain;
 }
 
+
+
 /* REDES SOCIALES */
 
-.redes-header a,
-.redes-footer a {
-  display: grid;
-  place-items: center;
+.nav-redes {
+  display: flex;
+  align-items: center;
 
-  width: 42px;
-  height: 42px;
+  gap: 9px;
+}
+
+.nav-redes a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
 
   border-radius: 50%;
 
+  background: #fff0d8;
+  color: var(--cafe);
+
+  font-size: 17px;
+
   transition:
     transform .25s ease,
-    background-color .25s ease;
+    background .25s ease;
 }
 
-.redes-header a {
-  background: #fff;
-  color: var(--naranja-oscuro);
-
-  border: 1.5px solid #edd2b9;
-
-  font-size: 20px;
-
-  box-shadow:
-    0 3px 9px rgba(82,43,28,.06);
-}
-
-.redes-header a:hover {
-  transform: translateY(-3px);
+.nav-redes a:hover {
   background: var(--amarillo);
+  color: var(--cafe);
+
+  transform: translateY(-3px);
 }
 
-.redes-header a[aria-disabled="true"] {
-  pointer-events: none;
-}
 
+/* =========================================
+   04. HERO PRINCIPAL
+========================================= */
 
-/* ==========================================
-   03. PORTADA PRINCIPAL
-========================================== */
-
-.hero-las-tias {
+.hero {
   position: relative;
   isolation: isolate;
   overflow: hidden;
 
-  min-height: 545px;
+  min-height: 640px;
 
-  display: grid;
+  display: flex;
   align-items: center;
 
-  padding: 75px 0 105px;
+  padding: 150px 0 130px;
 
   background:
     radial-gradient(
-      circle at 82% 13%,
-      rgba(255,255,255,.85) 0 40px,
-      transparent 140px
+      ellipse at 92% 4%,
+      rgba(255,213,103,.65),
+      transparent 40%
     ),
     radial-gradient(
-      circle at 13% 65%,
-      rgba(255,255,255,.30),
-      transparent 210px
+      ellipse at 2% 90%,
+      rgba(207,70,15,.25),
+      transparent 52%
     ),
     linear-gradient(
-      180deg,
-      #a5e2ed 0%,
-      #c9eef0 48%,
-      #f3f5e8 82%,
-      #fff9ef 100%
+      125deg,
+      #f47d26 0%,
+      #e96e22 55%,
+      #f59330 100%
     );
 }
 
-/* NUBES DE TRANSICIÓN */
-
-.hero-las-tias::after {
-  content: '';
-
-  position: absolute;
-  z-index: 1;
-
-  bottom: -2px;
-  left: 0;
-
-  width: 100%;
-  height: 84px;
-
-  background:
-    radial-gradient(
-      circle at 6% 94%,
-      var(--crema) 57px,
-      transparent 58px
-    ),
-    radial-gradient(
-      circle at 27% 111%,
-      var(--crema) 85px,
-      transparent 86px
-    ),
-    radial-gradient(
-      circle at 52% 108%,
-      var(--crema) 68px,
-      transparent 69px
-    ),
-    radial-gradient(
-      circle at 76% 107%,
-      var(--crema) 90px,
-      transparent 91px
-    ),
-    radial-gradient(
-      circle at 101% 94%,
-      var(--crema) 68px,
-      transparent 69px
-    ),
-    linear-gradient(
-      to bottom,
-      transparent 70%,
-      var(--crema) 71%
-    );
-
-  pointer-events: none;
-}
-
-.hero-las-tias .container {
+.hero .container {
   position: relative;
-  z-index: 3;
+  z-index: 5;
+}
+
+.hero-contenido {
+  position: relative;
+  max-width: 620px;
 }
 
 
-/* ETIQUETA FESTIVAL */
+/* ETIQUETA SUPERIOR */
 
-.etiqueta-festival {
+.hero-etiqueta {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
 
-  max-width: 100%;
+  padding: 9px 15px;
+  margin-bottom: 25px;
 
-  padding: 10px 17px;
-  margin-bottom: 20px;
-
-  border-radius: 30px;
-
-  background: #fff9eb;
-  border: 1.5px solid #f2c77a;
-
-  box-shadow:
-    0 7px 17px rgba(82,43,28,.09);
-
+  background: #ffb064;
   color: var(--cafe);
 
-  font-family: var(--fuente-titulos);
-  font-size: 11px;
-  font-weight: 700;
-  line-height: 1.4;
+  border-radius: 50px;
 
-  letter-spacing: .35px;
+  font-family: var(--fuente-texto);
+  font-size: 10px;
+  font-weight: 900;
+
+  letter-spacing: 1.4px;
 }
 
 
-/* TÍTULO PRINCIPAL */
+/* TÍTULO */
 
-.titulo-principal {
-  max-width: 560px;
+.hero-titulo {
+  position: relative;
 
-  margin: 0 auto 20px;
+  font-size: clamp(52px, 10.4vw, 90px);
+  font-weight: 400;
+  line-height: .99;
 
-  color: var(--cafe-profundo);
+  letter-spacing: -1.4px;
 
-  font-size: clamp(38px, 10vw, 68px);
-  font-weight: 650;
-  line-height: 1.05;
-  letter-spacing: -.9px;
-
-  text-wrap: balance;
+  color: var(--cafe-oscuro);
 
   text-shadow:
-    0 2px 0 rgba(255,255,255,.68);
+    3px 4px 0 rgba(255,191,90,.64);
+
+  margin-bottom: 26px;
+}
+
+.hero-titulo span {
+  color: #fff6d9;
+
+  text-shadow:
+    3px 5px 0 #c95819;
+
+  white-space: normal;
 }
 
 
 /* DESCRIPCIÓN */
 
-.descripcion-principal {
-  max-width: 430px;
+.hero-descripcion {
+  max-width: 420px;
 
-  margin: 0 auto 28px;
-
-  font-size: clamp(15px, 4vw, 19px);
-  line-height: 1.6;
+  font-size: 16px;
   font-weight: 750;
+  line-height: 1.6;
+
+  color: var(--cafe);
 }
 
-.descripcion-principal span {
-  color: var(--naranja-oscuro);
+.hero-descripcion strong {
+  display: block;
+  margin-top: 5px;
+
   font-weight: 900;
 }
 
 
-/* BOTÓN PRINCIPAL */
+/* BOTONES PORTADA */
 
-.btn-las-tias {
-  position: relative;
-  overflow: hidden;
+.hero-acciones {
+  display: flex;
+  align-items: center;
 
+  flex-wrap: wrap;
+
+  gap: 18px;
+
+  margin-top: 30px;
+}
+
+.btn-lt-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  width: min(100%, 355px);
-  min-height: 58px;
+  gap: 10px;
 
-  padding: 14px 21px;
+  min-height: 55px;
 
-  border: 2px solid #ab4920;
-  border-radius: 17px;
+  padding: 14px 22px;
 
-  color: var(--blanco);
+  border-radius: 16px;
 
-  background:
-    linear-gradient(
-      180deg,
-      #e98b46,
-      #cb5e2b
-    );
+  background: var(--amarillo);
+  color: var(--cafe);
+
+  border: 2px solid #e9a926;
+
+  font-family: var(--fuente-secundaria);
+  font-size: 16px;
+  font-weight: 700;
 
   box-shadow:
-    0 6px 0 #a94b26,
-    0 13px 27px rgba(158,76,40,.19);
-
-  font-family: var(--fuente-titulos);
-  font-size: 18px;
-  font-weight: 650;
-  line-height: 1.3;
+    0 6px 0 #be7621,
+    0 12px 20px rgba(71,39,22,.14);
 
   transition:
-    transform .22s ease,
-    box-shadow .22s ease,
-    filter .22s ease;
+    transform .25s ease,
+    box-shadow .25s ease,
+    background .25s ease;
 }
 
-.btn-las-tias:hover {
-  color: #fff;
-  filter: saturate(1.1);
+.btn-lt-primary:hover {
+  background: #ffdf77;
+  color: var(--cafe);
+
   transform: translateY(-3px);
 }
 
-.btn-las-tias:active {
-  transform: translateY(4px);
-  box-shadow: 0 2px 0 #a94b26;
+.btn-lt-primary:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #be7621;
+}
+
+.hero-frase {
+  display: inline-block;
+
+  color: white;
+
+  font-family: var(--fuente-secundaria);
+  font-size: 17px;
+  font-weight: 700;
+
+  transform: rotate(-7deg);
 }
 
 
-/* ==========================================
-   04. GLOBOS AEROSTÁTICOS
-========================================== */
+/* ONDA INFERIOR */
 
-.globos-fondo {
+.hero-onda {
+  position: absolute;
+
+  left: -5%;
+  bottom: -1px;
+
+  width: 110%;
+  height: 58px;
+
+  background: var(--crema);
+
+  clip-path: ellipse(68% 48% at 50% 100%);
+
+  z-index: 4;
+}
+
+
+/* =========================================
+   05. GLOBOS AEROSTÁTICOS
+========================================= */
+
+.hero-decoracion {
   position: absolute;
   inset: 0;
-  z-index: 2;
+
   pointer-events: none;
+
+  overflow: hidden;
+  z-index: 1;
 }
 
 .globo {
   position: absolute;
 
-  width: 56px;
-  height: 86px;
+  width: 105px;
+  height: 150px;
 
-  transform-origin: center 60%;
-
-  opacity: .83;
+  transform-origin: center 70%;
 
   filter:
-    drop-shadow(
-      0 5px 5px rgba(49,81,85,.12)
-    );
+    drop-shadow(5px 10px 0 rgba(91,44,18,.16));
 
   animation:
-    lt-flotar 6s ease-in-out infinite;
+    globoFlotar 6s ease-in-out infinite;
 }
 
 
 /* CUERPO DEL GLOBO */
 
-.globo::before {
-  content: '';
-
-  position: absolute;
-
-  top: 0;
-  left: 0;
+.globo-cuerpo {
+  position: relative;
 
   width: 100%;
-  height: 76%;
+  height: 81%;
+
+  overflow: hidden;
 
   border-radius:
-    48% 48% 44% 44% /
-    36% 36% 64% 64%;
+    50% 50% 43% 43% /
+    38% 38% 60% 60%;
+
+  border: 3px solid #713a24;
 
   background:
     linear-gradient(
       90deg,
-      #d96739 0 19%,
-      #f6a94b 19% 37%,
-      #ffe7ab 37% 51%,
-      #f6a94b 51% 70%,
-      #d96739 70% 85%,
-      #ad512e 85%
+      #e76633 0%,
+      #e76633 22%,
+      #ffce77 22%,
+      #ffce77 44%,
+      #fff0bd 44%,
+      #fff0bd 57%,
+      #438f93 57%,
+      #438f93 80%,
+      #d45b31 80%
     );
 
-  border:
-    1px solid rgba(103,58,37,.19);
-
   box-shadow:
-    inset -6px -5px 10px rgba(92,49,26,.13),
-    inset 5px 2px 8px rgba(255,255,255,.27);
+    inset -12px -8px 12px rgba(66,35,24,.18),
+    inset 9px 4px 13px rgba(255,255,255,.23);
+}
+
+
+/* CONEXIONES DE LA CANASTILLA */
+
+.globo-cuerpo::after {
+  content: "";
+
+  position: absolute;
+
+  width: 30%;
+  height: 17%;
+
+  bottom: -4%;
+  left: 35%;
+
+  border-bottom: 5px solid #713a24;
+  border-left: 2px solid #713a24;
+  border-right: 2px solid #713a24;
 }
 
 
 /* CANASTILLA */
 
-.globo::after {
-  content: '';
-
+.globo-cesta {
   position: absolute;
 
-  top: 78%;
-  left: 36%;
+  bottom: 5%;
+  left: 42%;
 
-  width: 28%;
+  width: 17%;
   height: 12%;
 
-  border-radius: 0 0 3px 3px;
+  background: #b57b45;
 
-  border: 1px solid #6b4125;
+  border: 2px solid #713a24;
+  border-radius: 2px 2px 5px 5px;
 
-  background:
-    repeating-linear-gradient(
-      0deg,
-      #a26e43,
-      #a26e43 3px,
-      #805432 4px
-    );
-
-  box-shadow:
-    0 -8px 0 -6px #71401f;
+  transform: rotate(-3deg);
 }
 
 
-/* POSICIÓN DE GLOBOS */
+/* POSICIONES */
 
-.globo-1 {
-  top: 11%;
+.globo-grande {
+  top: 30%;
   right: 6%;
+
   animation-delay: -1s;
 }
 
-.globo-2 {
-  top: 57%;
-  left: 5%;
+.globo-pequeno {
+  top: 55%;
+  right: 27%;
 
-  scale: .60;
-  opacity: .5;
+  scale: .53;
+  opacity: .85;
 
-  animation-delay: -2.7s;
-}
-
-.globo-3 {
-  top: 69%;
-  right: 11%;
-
-  scale: .48;
-  opacity: .46;
-
-  animation-delay: -4s;
+  animation-delay: -3s;
 }
 
 
-/* ANIMACIÓN FLOTANTE */
+/* ESTRELLAS */
 
-@keyframes lt-flotar {
+.hero-estrella {
+  position: absolute;
 
+  color: #fff2c2;
+
+  font-size: 30px;
+
+  animation:
+    estrellaBrillar 3s ease-in-out infinite;
+}
+
+.estrella-1 {
+  top: 27%;
+  left: 75%;
+}
+
+.estrella-2 {
+  bottom: 23%;
+  right: 16%;
+
+  font-size: 19px;
+  animation-delay: -1.5s;
+}
+
+
+/* ANIMACIONES */
+
+@keyframes globoFlotar {
   0%, 100% {
     translate: 0 0;
     rotate: -2deg;
   }
 
   50% {
-    translate: 0 -16px;
+    translate: 0 -17px;
     rotate: 2deg;
   }
+}
 
+@keyframes estrellaBrillar {
+  0%, 100% {
+    opacity: .45;
+    transform: scale(.85);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
 }
 
 
-/* ==========================================
-   05. FOTOGRAFÍA GASTRONÓMICA
-========================================== */
+/* =========================================
+   06. GALERÍA GASTRONÓMICA
+========================================= */
 
-.seccion-comida {
+.galeria-section {
   position: relative;
-  z-index: 4;
 
-  padding: 8px 0 75px;
+  padding: 75px 0 95px;
 
   background: var(--crema);
 }
 
-.fotografia-platillo {
-  position: relative;
-
-  max-width: 710px;
-  margin: 0 auto;
-
-  border: 6px solid #fff;
-  border-radius: 26px;
-
-  box-shadow:
-    0 14px 0 -7px #f3b77c,
-    var(--sombra);
-
-  overflow: hidden;
-
-  background: #efd6bb;
+.section-heading {
+  margin-bottom: 45px;
 }
 
-.fotografia-platillo img {
-  width: 100%;
-
-  height: clamp(235px, 65vw, 430px);
-
-  object-fit: cover;
-  object-position: center;
-
-  transition: transform .8s ease;
-}
-
-
-/* SELLO DECORATIVO */
-
-.fotografia-platillo::before {
-  content: '¡QUÉ ANTOJO!';
-
-  position: absolute;
-  z-index: 2;
-
-  top: 15px;
-  right: 14px;
-
-  padding: 8px 11px;
-
-  border-radius: 8px;
-
-  transform: rotate(4deg);
-
-  background: var(--amarillo);
-  color: var(--cafe);
-
-  box-shadow:
-    0 4px 10px rgba(0,0,0,.13);
-
-  font-family: var(--fuente-titulos);
-  font-size: 12px;
-  font-weight: 700;
-
-  letter-spacing: .4px;
-}
-
-
-/* SOMBRA SOBRE FOTO */
-
-.fotografia-platillo::after {
-  content: '';
-
-  position: absolute;
-  inset: 0;
-
-  pointer-events: none;
-
-  background:
-    linear-gradient(
-      180deg,
-      transparent 68%,
-      rgba(51,26,18,.15)
-    );
-}
-
-
-/* TÍTULOS DE SECCIÓN */
-
-.titulo-seccion {
-  max-width: 500px;
-
-  margin: 0 auto 12px;
-
-  color: var(--cafe-profundo);
-
-  font-size: clamp(30px, 7.6vw, 42px);
-  font-weight: 650;
-  line-height: 1.12;
-
-  text-wrap: balance;
-}
-
-.texto-seccion {
-  max-width: 450px;
-
-  margin: 0 auto;
-
-  color: #7b533f;
-
-  font-size: 16px;
-  font-weight: 750;
-  line-height: 1.6;
-}
-
-
-/* ==========================================
-   06. CUPÓN DE DESCUENTO
-========================================== */
-
-.seccion-descuento {
-  padding: 80px 0;
-
-  background:
-    radial-gradient(
-      circle at 6% 20%,
-      rgba(255,198,75,.27) 0 45px,
-      transparent 46px
-    ),
-    radial-gradient(
-      circle at 96% 83%,
-      rgba(218,120,60,.14) 0 56px,
-      transparent 57px
-    ),
-    linear-gradient(
-      180deg,
-      #f4ddc0,
-      #fff2df
-    );
-}
-
-
-/* TARJETA ESTILO BOLETO */
-
-.tarjeta-descuento {
-  position: relative;
-  overflow: hidden;
-
-  padding: 38px 20px 34px;
-
-  border-radius: 27px;
-  border: 2px solid #e8ad74;
-
-  outline:
-    7px solid rgba(255,255,255,.42);
-
-  background:
-    repeating-linear-gradient(
-      135deg,
-      rgba(219,144,87,.035) 0 7px,
-      transparent 7px 17px
-    ),
-    #fffdfa;
-
-  box-shadow:
-    0 17px 35px rgba(103,53,30,.18);
-}
-
-
-/* MUESCAS DE BOLETO */
-
-.tarjeta-descuento::before,
-.tarjeta-descuento::after {
-  content: '';
-
-  position: absolute;
-  z-index: 2;
-
-  top: 51%;
-
-  width: 29px;
-  height: 49px;
-
-  background: #f8e7d0;
-
-  border: 2px solid #e8ad74;
-  border-radius: 50%;
-}
-
-.tarjeta-descuento::before {
-  left: -19px;
-}
-
-.tarjeta-descuento::after {
-  right: -19px;
-}
-
-
-/* ENCABEZADO CUPÓN */
-
-.encabezado-descuento {
+.section-etiqueta {
   display: inline-block;
 
-  padding: 9px 15px;
-  margin-bottom: 22px;
+  margin-bottom: 18px;
 
-  border-radius: 20px;
-
-  background: #fff0d7;
-  border: 1px solid #f2c58c;
-
-  color: var(--naranja-oscuro);
-
+  font-family: var(--fuente-texto);
   font-size: 11px;
   font-weight: 900;
-  letter-spacing: .6px;
-}
-
-
-/* TÍTULO PROMOCIÓN */
-
-.titulo-descuento {
-  max-width: 400px;
-
-  margin: 0 auto 15px;
-
-  font-size: clamp(26px, 7vw, 38px);
-  font-weight: 650;
-  line-height: 1.16;
-
-  text-wrap: balance;
-}
-
-
-/* NÚMERO 10% */
-
-.numero-descuento {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-
-  margin: 7px 0 0;
 
   color: var(--naranja-oscuro);
 
-  font-family: var(--fuente-titulos);
-  font-size: clamp(98px, 27vw, 170px);
-  font-weight: 700;
-  line-height: .98;
+  letter-spacing: 1.8px;
+}
 
-  letter-spacing: -5px;
+.section-titulo {
+  color: var(--cafe);
+
+  font-size: clamp(43px, 9vw, 74px);
+  line-height: .95;
 
   text-shadow:
-    3px 4px 0 #fce1bb;
+    3px 4px 0 #edcc97;
 }
 
-.numero-descuento span {
-  font-size: .45em;
-  margin-top: .18em;
-  letter-spacing: -2px;
-}
+.section-descripcion {
+  max-width: 470px;
 
+  margin: 20px auto 0;
 
-/* TEXTO DE DESCUENTO */
-
-.texto-descuento {
-  margin: 0 0 16px;
-
-  font-size: clamp(25px, 7vw, 33px);
-  font-weight: 700;
-  letter-spacing: .6px;
-
-  color: var(--cafe);
-}
-
-
-/* DETALLES DE PROMOCIÓN */
-
-.detalle-descuento {
-  max-width: 290px;
-
-  margin: 0 auto 26px;
-
-  font-size: 17px;
-  line-height: 1.55;
-  font-weight: 850;
-}
-
-
-/* INSTRUCCIONES DEL CUPÓN */
-
-.instrucciones-cupon {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  gap: 9px;
-
-  max-width: 405px;
-  margin: auto;
-
-  padding: 20px 16px;
-
-  border-radius: 16px;
-
-  border: 1.5px dashed #dc944e;
-
-  background: #fff4df;
-}
-
-.instrucciones-cupon i {
-  font-size: 34px;
-  line-height: 1;
-
-  color: var(--naranja-oscuro);
-}
-
-.instrucciones-cupon p {
-  max-width: 310px;
-
-  font-size: 15px;
-  font-weight: 850;
-  line-height: 1.5;
-}
-
-
-/* SELLO DEL FESTIVAL */
-
-.sello-promocion {
-  display: inline-block;
-
-  margin-top: 22px;
-
-  padding: 10px 16px;
-
-  border-radius: 10px;
-
-  background: var(--cafe);
-  color: #fff;
-
-  font-size: 11px;
-  font-weight: 900;
-  line-height: 1.5;
-  letter-spacing: .5px;
-}
-
-
-/* ==========================================
-   07. GOOGLE MAPS
-========================================== */
-
-.seccion-ubicacion {
-  padding: 75px 0 85px;
-  background: #fff9ef;
-}
-
-.subtitulo-ubicacion {
-  display: inline-block;
-
-  margin-bottom: 15px;
-
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: 1px;
-
-  color: var(--naranja-oscuro);
-}
-
-.direccion {
-  margin: 14px 0 25px;
+  color: var(--cafe-claro);
 
   font-size: 15px;
   font-weight: 800;
   line-height: 1.6;
 }
 
-.direccion i {
-  color: var(--naranja-oscuro);
-  margin-right: 5px;
+
+/* COLLAGE */
+
+.food-gallery {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  grid-template-rows:
+    repeat(5, 145px);
+
+  gap: 13px;
+
+  max-width: 1020px;
+  margin: auto;
 }
 
+.food-item {
+  position: relative;
 
-/* CONTENEDOR DEL MAPA */
+  margin: 0;
 
-.contenedor-mapa {
   overflow: hidden;
 
-  max-width: 850px;
-  margin: auto;
+  border: 5px solid white;
+  border-radius: 45% / 24%;
 
-  border-radius: 24px;
-  border: 5px solid #fff;
+  box-shadow:
+    0 12px 25px rgba(71,39,22,.12);
 
-  box-shadow: var(--sombra);
+  background: #f0d8bc;
 
-  background: #e8e9e5;
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease;
 }
 
-.contenedor-mapa iframe {
+.food-item img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform .5s ease;
+}
+
+.food-item:hover img {
+  transform: scale(1.06);
+}
+
+
+/* DISTRIBUCIÓN MÓVIL */
+
+.food-item-1 {
+  grid-column: 1;
+  grid-row: 1 / 3;
+
+  transform: rotate(-3deg);
+}
+
+.food-item-2 {
+  grid-column: 2;
+  grid-row: 1;
+
+  transform: rotate(3deg);
+}
+
+.food-item-3 {
+  grid-column: 2;
+  grid-row: 2 / 4;
+
+  transform: rotate(-2deg);
+}
+
+.food-item-4 {
+  grid-column: 1;
+  grid-row: 3 / 4;
+
+  transform: rotate(2deg);
+}
+
+.food-item-5 {
+  grid-column: 1;
+  grid-row: 4 / 6;
+
+  transform: rotate(-3deg);
+}
+
+
+/* SELLO DE GALERÍA */
+
+.food-sello {
+  grid-column: 2;
+  grid-row: 4 / 6;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  align-self: center;
+  justify-self: center;
+
+  width: 135px;
+  height: 135px;
+
+  padding: 16px;
+
+  border: 2px dashed var(--naranja);
+
+  border-radius: 50%;
+
+  background: var(--crema);
+
+  color: var(--naranja-oscuro);
+
+  font-family: var(--fuente-titulo);
+  font-size: 23px;
+
+  line-height: .95;
+  text-align: center;
+
+  transform: rotate(-9deg);
+}
+
+
+/* =========================================
+   07. CUPÓN 10%
+========================================= */
+
+.descuento-section {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 90px 0;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,.21) 1.5px,
+      transparent 2px
+    ),
+    #fcb62f;
+
+  background-size:
+    20px 20px,
+    auto;
+}
+
+
+/* TARJETA DEL CUPÓN */
+
+.cupon-ticket {
+  position: relative;
+
+  max-width: 710px;
+  margin: auto;
+
+  padding: 26px 23px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffe3a2 0%,
+      #ffd27d 100%
+    );
+
+  border: 7px solid #fff1cd;
+  outline: 5px dashed #d56a2a;
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 18px 0 rgba(144,74,20,.14),
+    0 30px 35px rgba(110,63,16,.16);
+
+  transform: rotate(-1deg);
+}
+
+
+/* PARTE SUPERIOR */
+
+.cupon-superior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 15px;
+
+  padding-bottom: 17px;
+
+  border-bottom:
+    2px dashed rgba(71,39,22,.17);
+}
+
+.cupon-logo {
+  width: 115px;
+  max-height: 55px;
+
+  object-fit: contain;
+}
+
+.cupon-etiqueta {
+  font-size: 9px;
+  font-weight: 900;
+
+  letter-spacing: 1px;
+
+  color: var(--naranja-oscuro);
+
+  text-align: right;
+}
+
+
+/* CONTENIDO */
+
+.cupon-centro {
+  padding: 30px 0;
+
+  text-align: center;
+}
+
+.cupon-bienvenida {
+  font-size: 10px;
+  font-weight: 900;
+
+  letter-spacing: 1.5px;
+}
+
+.cupon-porcentaje {
+  margin: 12px 0 0;
+
+  color: var(--naranja-oscuro);
+
+  font-family: var(--fuente-titulo);
+
+  font-size: clamp(95px, 23vw, 165px);
+  line-height: .9;
+
+  text-shadow:
+    4px 5px 0 #fff3d5;
+}
+
+.cupon-titulo {
+  margin-top: 4px;
+
+  color: var(--naranja-oscuro);
+
+  font-size: clamp(35px, 9vw, 66px);
+  line-height: .95;
+
+  text-shadow:
+    3px 4px 0 #fff3d5;
+}
+
+.cupon-descripcion {
+  max-width: 380px;
+
+  margin: 20px auto;
+
+  font-size: 16px;
+  font-weight: 850;
+  line-height: 1.5;
+}
+
+
+/* INSTRUCCIONES */
+
+.cupon-instrucciones {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 10px;
+
+  max-width: 410px;
+
+  margin: 22px auto 0;
+  padding: 16px;
+
+  border-radius: 14px;
+
+  background: rgba(255,249,239,.55);
+
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 1.5;
+}
+
+.cupon-instrucciones i {
+  font-size: 28px;
+
+  color: var(--naranja-oscuro);
+}
+
+
+/* PIE DEL CUPÓN */
+
+.cupon-inferior {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  padding-top: 18px;
+
+  border-top:
+    2px dashed rgba(71,39,22,.17);
+}
+
+.cupon-inferior > span:first-child {
+  font-size: 10px;
+  font-weight: 900;
+
+  letter-spacing: 1.5px;
+}
+
+.cupon-sello {
+  display: grid;
+  place-items: center;
+
+  width: 50px;
+  height: 50px;
+
+  border-radius: 50%;
+
+  background: var(--naranja);
+  color: white;
+
+  border: 2px solid white;
+
+  font-family: var(--fuente-titulo);
+  font-size: 19px;
+
+  transform: rotate(12deg);
+}
+
+
+/* AVISO INFERIOR */
+
+.cupon-aviso {
+  max-width: 550px;
+
+  margin: 26px auto 0;
+
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.6;
+
+  color: var(--cafe);
+}
+
+
+/* =========================================
+   08. UBICACIÓN
+========================================= */
+
+.ubicacion-section {
+  padding: 90px 0;
+
+  background: var(--cafe);
+  color: var(--crema);
+}
+
+.ubicacion-etiqueta {
+  display: inline-block;
+
+  margin-bottom: 20px;
+
+  color: var(--amarillo);
+
+  font-size: 11px;
+  font-weight: 900;
+
+  letter-spacing: 1.6px;
+}
+
+.ubicacion-titulo {
+  max-width: 500px;
+
+  margin-bottom: 25px;
+
+  color: #fff1d6;
+
+  font-size: clamp(42px, 9vw, 65px);
+  line-height: 1;
+
+  text-wrap: balance;
+}
+
+.ubicacion-direccion,
+.ubicacion-horario {
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  margin-bottom: 13px;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  color: #ffe8c4;
+}
+
+.ubicacion-direccion i,
+.ubicacion-horario i {
+  color: var(--amarillo);
+}
+
+
+/* BOTÓN CÓMO LLEGAR */
+
+.btn-lt-maps {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-top: 18px;
+
+  padding: 14px 24px;
+
+  min-height: 55px;
+
+  border-radius: 13px;
+
+  background: var(--amarillo);
+  color: var(--cafe);
+
+  font-family: var(--fuente-secundaria);
+  font-size: 16px;
+  font-weight: 750;
+
+  transition:
+    transform .25s ease,
+    background .25s ease;
+}
+
+.btn-lt-maps:hover {
+  background: #ffe082;
+  color: var(--cafe);
+
+  transform: translateY(-3px);
+}
+
+
+/* MAPA GOOGLE */
+
+.mapa-contenedor {
+  overflow: hidden;
+
+  border: 6px solid #f5dcaa;
+
+  border-radius: 26px;
+
+  box-shadow:
+    0 16px 30px rgba(0,0,0,.20);
+
+  background: #e0d0ae;
+}
+
+.mapa-contenedor iframe {
   display: block;
 
   width: 100%;
-  height: 300px;
+  min-height: 310px;
 
   border: 0;
 }
 
 
-/* BOTÓN MAPS */
-
-.btn-maps {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  min-height: 57px;
-  width: min(100%, 430px);
-
-  padding: 14px 18px;
-
-  border-radius: 16px;
-
-  background: var(--cafe);
-  color: #fff;
-
-  font-family: var(--fuente-titulos);
-  font-size: 17px;
-  font-weight: 650;
-  line-height: 1.3;
-
-  box-shadow: 0 5px 0 #321b12;
-
-  transition:
-    transform .2s ease,
-    background .2s ease;
-}
-
-.btn-maps:hover {
-  color: #fff;
-  background: var(--naranja-oscuro);
-  transform: translateY(-3px);
-}
-
-.btn-maps:active {
-  transform: translateY(3px);
-  box-shadow: 0 2px 0 #321b12;
-}
-
-
-/* ==========================================
-   08. FOOTER
-========================================== */
+/* =========================================
+   09. FOOTER
+========================================= */
 
 .footer-las-tias {
-  position: relative;
+  background: var(--cafe-oscuro);
 
-  padding: 48px 20px 32px;
+  color: var(--crema);
 
-  background: var(--cafe-profundo);
-  color: #fff;
+  border-top:
+    1px solid rgba(255,255,255,.10);
+
+  padding: 32px 0 100px;
+}
+
+.footer-contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 19px;
 
   text-align: center;
 }
 
-.footer-las-tias::before {
-  content: '';
-
-  position: absolute;
-
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 7px;
-
-  background:
-    repeating-linear-gradient(
-      90deg,
-      var(--naranja) 0 28px,
-      var(--amarillo) 28px 40px,
-      #f0a16e 40px 54px
-    );
-}
-
-
-/* LOGO FOOTER */
-
-.logo-footer {
-  width: 155px;
+.footer-logo {
+  width: 130px;
   height: auto;
 
-  margin: 0 auto;
-  padding: 10px;
+  padding: 9px;
 
-  border-radius: 18px;
+  border-radius: 14px;
 
-  background: #fff9ee;
+  background: var(--crema);
+}
+
+.footer-contenido p {
+  font-size: 13px;
+  font-weight: 750;
+
+  color: #ecd4b4;
+}
+
+.footer-redes {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.footer-redes a {
+  display: grid;
+  place-items: center;
+
+  width: 44px;
+  height: 44px;
+
+  border-radius: 50%;
+
+  background: #60402b;
+  color: white;
+
+  font-size: 19px;
+
+  transition:
+    transform .25s ease,
+    background .25s ease;
+}
+
+.footer-redes a:hover {
+  transform: translateY(-3px);
+
+  background: var(--naranja);
+  color: white;
 }
 
 
-/* FRASE FOOTER */
+/* =========================================
+   10. BOTÓN FLOTANTE MÓVIL
+========================================= */
 
-.frase-footer {
-  max-width: 320px;
+.mobile-cupon-link {
+  position: fixed;
+  z-index: 999;
 
-  margin: 22px auto;
+  bottom: max(15px, env(safe-area-inset-bottom));
+  left: 50%;
 
-  color: #ffebd5;
+  width: min(calc(100% - 30px), 400px);
 
-  font-family: var(--fuente-titulos);
-  font-size: 21px;
-  font-weight: 550;
-  line-height: 1.35;
-}
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+  gap: 10px;
 
-/* REDES FOOTER */
+  min-height: 54px;
 
-.redes-footer a {
-  width: 48px;
-  height: 48px;
+  padding: 13px 18px;
 
-  background: #fff7ea;
+  border-radius: 100px;
+
+  background: var(--amarillo);
   color: var(--cafe);
 
-  font-size: 21px;
+  border: 2px solid #e6a31d;
+
+  box-shadow:
+    0 8px 28px rgba(71,39,22,.23);
+
+  font-family: var(--fuente-secundaria);
+  font-size: 15px;
+  font-weight: 750;
+
+  text-align: center;
+
+  transform: translateX(-50%);
+
+  transition: background .25s ease;
 }
 
-.redes-footer a:hover {
-  background: var(--amarillo);
-  transform: translateY(-3px);
-}
-
-.copyright {
-  margin-top: 28px;
-
-  font-size: 12px;
-  color: #e4c7b4;
+.mobile-cupon-link:hover {
+  background: #ffe180;
+  color: var(--cafe);
 }
 
 
-/* ==========================================
-   09. ANIMACIONES DE ENTRADA
-========================================== */
+/* =========================================
+   11. ANIMACIONES DE ENTRADA
+========================================= */
 
 .js-animations [data-animate] {
   opacity: 0;
 
-  transform: translateY(25px);
-
   transition:
-    opacity .72s ease,
-    transform .72s cubic-bezier(.2,.75,.2,1);
+    opacity .75s ease,
+    translate .75s ease,
+    scale .75s ease;
+}
+
+.js-animations [data-animate="fade-up"] {
+  translate: 0 30px;
 }
 
 .js-animations [data-animate="zoom-in"] {
-  transform: scale(.94);
+  scale: .94;
 }
 
 .js-animations [data-animate].is-visible {
   opacity: 1;
-  transform: translateY(0) scale(1);
+  translate: 0 0;
+  scale: 1;
 }
 
 
-/* ==========================================
-   10. RESPONSIVE TABLETS
-========================================== */
+/* =========================================
+   12. TABLET Y COMPUTADORA
+========================================= */
 
 @media (min-width: 768px) {
 
-  .logo-header img {
-    width: 160px;
+  .site-header {
+    top: 18px;
   }
 
-  .hero-las-tias {
-    min-height: 630px;
-    padding: 105px 0 130px;
+  .navbar-las-tias {
+    padding: 10px 22px;
   }
 
-  .hero-las-tias::after {
-    height: 105px;
+ .nav-logo img {
+  width: 180px;
+}
+
+  .hero {
+    min-height: 680px;
+
+    padding-top: 160px;
   }
 
-  .etiqueta-festival {
-    font-size: 13px;
+  .globo-grande {
+    width: 175px;
+    height: 245px;
+
+    right: 10%;
   }
 
-  .globo-1 {
-    scale: 1.3;
-    right: 13%;
+  .globo-pequeno {
+    width: 120px;
+    height: 180px;
+
+    right: 2%;
   }
 
-  .globo-2 {
-    scale: .9;
-    left: 14%;
+  .food-gallery {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: repeat(4, 135px);
+
+    gap: 22px;
   }
 
-  .globo-3 {
-    scale: .68;
-    right: 15%;
+  .food-item-1 {
+    grid-column: 1 / 5;
+    grid-row: 1 / 3;
   }
 
-  .fotografia-platillo {
-    border-width: 8px;
+  .food-item-2 {
+    grid-column: 5 / 9;
+    grid-row: 1 / 2;
   }
 
-  .seccion-comida {
-    padding-bottom: 95px;
+  .food-item-3 {
+    grid-column: 9 / 13;
+    grid-row: 1 / 3;
   }
 
-  .tarjeta-descuento {
-    padding: 50px 48px 43px;
+  .food-item-4 {
+    grid-column: 5 / 9;
+    grid-row: 2 / 4;
   }
 
-  .contenedor-mapa iframe {
-    height: 360px;
+  .food-item-5 {
+    grid-column: 1 / 5;
+    grid-row: 3 / 5;
+  }
+
+  .food-sello {
+    grid-column: 9 / 13;
+    grid-row: 3 / 5;
+
+    width: 180px;
+    height: 180px;
+
+    font-size: 28px;
+  }
+
+  .cupon-ticket {
+    padding: 35px 42px;
+  }
+
+  .footer-las-tias {
+    padding: 32px 0;
+  }
+
+  .footer-contenido {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .mobile-cupon-link {
+    display: none;
   }
 
 }
 
-
-/* ==========================================
-   11. RESPONSIVE COMPUTADORAS
-========================================== */
 
 @media (min-width: 992px) {
 
-  .hero-las-tias {
-    min-height: 680px;
+  .hero {
+    min-height: 720px;
   }
 
-  .fotografia-platillo:hover img {
-    transform: scale(1.04);
+  .hero-contenido {
+    padding-left: 10px;
   }
 
-  .seccion-descuento {
+  .globo-grande {
+    right: 14%;
+  }
+
+  .globo-pequeno {
+    right: 5%;
+  }
+
+  .galeria-section {
     padding: 105px 0;
   }
 
-  .seccion-ubicacion {
-    padding: 100px 0;
+  .descuento-section {
+    padding: 110px 0;
+  }
+
+  .ubicacion-section {
+    padding: 110px 0;
   }
 
 }
 
 
-/* ==========================================
-   12. CELULARES PEQUEÑOS
-========================================== */
+/* =========================================
+   13. CELULARES PEQUEÑOS
+========================================= */
 
-@media (max-width: 360px) {
+@media (max-width: 420px) {
 
-  .logo-header img {
-    width: 112px;
+  .site-header {
+    top: 9px;
   }
 
-  .redes-header a {
-    width: 36px;
-    height: 36px;
-    font-size: 17px;
+  .navbar-las-tias {
+    padding: 8px 12px;
   }
 
-  .titulo-principal {
-    font-size: 35px;
+  .nav-logo img {
+  width: 140px;
+}
+
+  .nav-redes a {
+    width: 35px;
+    height: 35px;
   }
 
-  .hero-las-tias {
-    padding-top: 64px;
+  .hero {
+    min-height: 600px;
+    padding: 135px 0 120px;
   }
 
-  .numero-descuento {
-    font-size: 94px;
+  .hero-titulo {
+    font-size: clamp(45px, 12vw, 54px);
   }
 
-  .tarjeta-descuento {
-    padding: 30px 15px;
+  .hero-descripcion {
+    max-width: 285px;
+    font-size: 14px;
+  }
+
+  .globo-grande {
+    right: -14px;
+    top: 49%;
+
+    scale: .72;
+    opacity: .65;
+  }
+
+  .globo-pequeno {
+    right: 0;
+    top: 70%;
+
+    scale: .35;
+    opacity: .45;
+  }
+
+  .food-gallery {
+    grid-template-rows: repeat(5, 125px);
+    gap: 9px;
+  }
+
+  .food-item {
+    border-width: 4px;
+  }
+
+  .food-sello {
+    width: 110px;
+    height: 110px;
+    font-size: 19px;
+  }
+
+  .cupon-ticket {
+    padding: 20px 14px;
+  }
+
+  .cupon-logo {
+    width: 100px;
+  }
+
+  .cupon-etiqueta {
+    font-size: 8px;
+  }
+
+  .cupon-titulo {
+    font-size: clamp(31px, 9vw, 39px);
+  }
+
+  .cupon-descripcion {
+    font-size: 14px;
+  }
+
+  .ubicacion-titulo {
+    font-size: 43px;
+  }
+
+  .mapa-contenedor iframe {
+    min-height: 260px;
   }
 
 }
 
 
-/* ==========================================
-   13. ACCESIBILIDAD
-========================================== */
+/* =========================================
+   14. ACCESIBILIDAD
+========================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
@@ -1210,13 +1519,15 @@ button:focus-visible {
   *,
   *::before,
   *::after {
-    animation: none !important;
-    transition: none !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
   }
 
   .js-animations [data-animate] {
     opacity: 1;
-    transform: none;
+    translate: none;
+    scale: 1;
   }
 
 }

@@ -8,36 +8,29 @@
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
 
-  <meta name="theme-color" content="#D77941">
+  <meta name="theme-color" content="#F47721">
 
-  <title>Las Tías Campestre | Festival del Globo</title>
+  <meta name="description"
+        content="Ven a Las Tías Campestre y disfruta el auténtico sabor mexicano. Presenta nuestra página durante el Festival del Globo y obtén un 10% de descuento en tu cuenta.">
 
-<!-- FAVICON LAS TÍAS -->
-<link
-  rel="icon"
-  type="image/png"
-  sizes="32x32"
-  href="assets/logo-las-tias.png"
->
+  <title>Las Tías Campestre | Sabor que vuela</title>
 
-<link
-  rel="apple-touch-icon"
-  href="assets/logo-las-tias.png"
->
+  <!-- FAVICON -->
+  <link rel="icon"
+        href="assets/logo-las-tias.png"
+        type="image/png">
 
   <!-- BOOTSTRAP -->
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  >
+    rel="stylesheet">
 
   <!-- BOOTSTRAP ICONS -->
   <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css"
-    rel="stylesheet"
-  >
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    rel="stylesheet">
 
-  <!-- TIPOGRAFÍAS -->
+  <!-- FUENTES -->
   <link rel="preconnect"
         href="https://fonts.googleapis.com">
 
@@ -46,61 +39,62 @@
         crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap"
-    rel="stylesheet"
-  >
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Lilita+One&family=Nunito:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
 
-  <!-- ESTILOS PERSONALIZADOS -->
+  <!-- CSS PERSONALIZADO -->
   <link rel="stylesheet" href="styles.css">
 
 </head>
 
 <body>
 
-  <!-- ========== ENCABEZADO ========== -->
+  <!-- ======================================
+       HEADER FLOTANTE
+  ====================================== -->
 
-  <header class="header-las-tias">
+  <header class="site-header">
 
     <div class="container">
 
-      <div class="d-flex align-items-center
-                  justify-content-between py-3">
+      <nav class="navbar-las-tias">
 
-        <a href="#inicio" class="logo-header">
+        <a class="nav-logo"
+           href="#inicio"
+           aria-label="Ir al inicio">
 
           <img
             src="assets/logo-las-tias.png"
-            alt="Las Tías Comida Mexicana"
-            class="img-fluid"
-          >
+            alt="Las Tías Comida Mexicana">
 
         </a>
 
-        <div class="redes-header d-flex gap-3">
+        <div class="nav-redes">
 
-          <!-- INSTAGRAM -->
           <a
             href="https://www.instagram.com/lastiascampestre/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Instagram Las Tías"
-          >
+            aria-label="Instagram de Las Tías">
+
             <i class="bi bi-instagram"></i>
+
           </a>
 
-          <!-- FACEBOOK: CAMBIAR URL -->
+          <!-- CAMBIAR POR FACEBOOK OFICIAL -->
           <a
-            href="https://www.facebook.com/REEMPLAZAR_PAGINA"
+            href="href="https://www.facebook.com/lastiascampestre""
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Facebook Las Tías"
-          >
+            aria-label="Facebook de Las Tías">
+
             <i class="bi bi-facebook"></i>
+
           </a>
 
         </div>
 
-      </div>
+      </nav>
 
     </div>
 
@@ -109,61 +103,197 @@
 
   <main>
 
-    <!-- ========== PORTADA ========== -->
+    <!-- ======================================
+         HERO - FESTIVAL DEL GLOBO
+    ====================================== -->
 
-    <section class="hero-las-tias" id="inicio">
+    <section class="hero" id="inicio">
 
-      <!-- GLOBOS DECORATIVOS -->
-      <div class="globos-fondo" aria-hidden="true">
+      <!-- ELEMENTOS ANIMADOS -->
+      <div class="hero-decoracion"
+           aria-hidden="true">
 
-        <div class="globo globo-1"></div>
+        <div class="globo globo-grande">
+          <div class="globo-cuerpo"></div>
+          <div class="globo-cesta"></div>
+        </div>
 
-        <div class="globo globo-2"></div>
+        <div class="globo globo-pequeno">
+          <div class="globo-cuerpo"></div>
+          <div class="globo-cesta"></div>
+        </div>
 
-        <div class="globo globo-3"></div>
+        <span class="hero-estrella estrella-1">✦</span>
+        <span class="hero-estrella estrella-2">✦</span>
 
       </div>
 
-      <div class="container position-relative">
+      <div class="container">
 
-        <div class="row justify-content-center">
+        <div class="row align-items-center">
 
-          <div class="col-12 col-lg-8 text-center">
+          <div class="col-12 col-lg-7">
 
-            <div class="etiqueta-festival"
+            <div class="hero-contenido"
                  data-animate="fade-up">
 
-              🎈 TEMPORADA DEL FESTIVAL DEL GLOBO
+              <span class="hero-etiqueta">
+
+                LEÓN SE DISFRUTA EN FAMILIA
+
+              </span>
+
+              <h1 class="hero-titulo">
+
+                ¡Sobrino,<br>
+
+                el antojo<br>
+
+                <span>también vuela!</span>
+
+              </h1>
+
+              <p class="hero-descripcion">
+
+                Después de disfrutar el
+                Festival del Globo, ven a
+                consentirte con nosotros.
+
+                <strong>
+                  ¡El mejor sabor mexicano
+                  te espera!
+                </strong>
+
+              </p>
+
+              <div class="hero-acciones">
+
+                <a href="#descuento"
+                   class="btn btn-lt-primary">
+
+                  <i class="bi bi-ticket-perforated"></i>
+
+                  ¡Quiero mi descuento!
+
+                </a>
+
+                <span class="hero-frase">
+
+                  ¡Qué planazo!
+
+                </span>
+
+              </div>
 
             </div>
 
-            <h1 class="titulo-principal"
-                data-animate="fade-up">
+          </div>
 
-              ¡Sobrino, el antojo
-              también vuela!
+        </div>
 
-            </h1>
+      </div>
 
-            <p class="descripcion-principal"
-               data-animate="fade-up">
+      <div class="hero-onda"
+           aria-hidden="true"></div>
 
-              Después de disfrutar los globos,
-              ven a consentirte con el auténtico
-              sabor de
+    </section>
 
-              <span>Las Tías Campestre.</span>
 
-            </p>
+    <!-- ======================================
+         GALERÍA GASTRONÓMICA
+    ====================================== -->
 
-            <a href="#descuento"
-               class="btn btn-las-tias btn-lg">
+    <section class="galeria-section"
+             id="sabores">
 
-              <i class="bi bi-ticket-perforated me-2"></i>
+      <div class="container">
 
-              ¡Quiero mi descuento!
+        <div class="section-heading text-center"
+             data-animate="fade-up">
 
-            </a>
+          <span class="section-etiqueta">
+
+            SOBRINO, YA SE ARMÓ
+
+          </span>
+
+          <h2 class="section-titulo">
+
+            SIEMPRE BIEN<br>
+            SERVIDO
+
+          </h2>
+
+          <p class="section-descripcion">
+
+            Un antojo, una mesa y muchas
+            ganas de disfrutar.
+
+          </p>
+
+        </div>
+
+
+        <!-- COLLAGE DE COMIDA REAL -->
+
+        <div class="food-gallery">
+
+          <figure class="food-item food-item-1"
+                  data-animate="fade-up">
+
+            <img
+              src="assets/platillo-real.jpg"
+              alt="Platillo de Las Tías Campestre"
+              loading="lazy">
+
+          </figure>
+
+          <figure class="food-item food-item-2"
+                  data-animate="fade-up">
+
+            <img
+              src="assets/platillo-2.jpg"
+              alt="Desayuno mexicano"
+              loading="lazy">
+
+          </figure>
+
+          <figure class="food-item food-item-3"
+                  data-animate="fade-up">
+
+            <img
+              src="assets/platillo-3.jpg"
+              alt="Especialidad de Las Tías"
+              loading="lazy">
+
+          </figure>
+
+          <figure class="food-item food-item-4"
+                  data-animate="fade-up">
+
+            <img
+              src="assets/platillo-4.jpg"
+              alt="Comida mexicana de Las Tías"
+              loading="lazy">
+
+          </figure>
+
+          <figure class="food-item food-item-5"
+                  data-animate="fade-up">
+
+            <img
+              src="assets/platillo-5.jpg"
+              alt="Delicioso platillo de Las Tías"
+              loading="lazy">
+
+          </figure>
+
+          <div class="food-sello"
+               aria-hidden="true">
+
+            SABOR<br>
+            A TODO<br>
+            VOLUMEN
 
           </div>
 
@@ -174,114 +304,105 @@
     </section>
 
 
-    <!-- ========== FOTOGRAFÍA ========== -->
+    <!-- ======================================
+         CUPÓN DIGITAL
+    ====================================== -->
 
-    <section class="seccion-comida">
-
-      <div class="container">
-
-        <div class="fotografia-platillo"
-             data-animate="fade-up">
-
-          <img
-            src="assets/platillo-real.jpg"
-            alt="Delicioso platillo de Las Tías"
-            class="img-fluid"
-          >
-
-        </div>
-
-        <div class="text-center mt-4">
-
-          <h2 class="titulo-seccion">
-
-            ¡Aquí el sabor siempre
-            te hace volver!
-
-          </h2>
-
-          <p class="texto-seccion">
-
-            Desayunos, tradición y todo
-            el sabor de nuestra cocina mexicana.
-
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ========== DESCUENTO ========== -->
-
-    <section class="seccion-descuento"
+    <section class="descuento-section"
              id="descuento">
 
       <div class="container">
 
         <div class="row justify-content-center">
 
-          <div class="col-12 col-lg-7">
+          <div class="col-12 col-lg-8">
 
-            <div class="tarjeta-descuento text-center"
-                 data-animate="zoom-in">
+            <article class="cupon-ticket"
+                     data-animate="zoom-in">
 
-              <div class="encabezado-descuento">
+              <div class="cupon-superior">
 
-                <span>¡TENEMOS UN REGALO PARA TI!</span>
+                <img
+                  src="assets/logo-las-tias.png"
+                  alt="Las Tías Comida Mexicana"
+                  class="cupon-logo">
 
-              </div>
+                <span class="cupon-etiqueta">
 
-              <h2 class="titulo-descuento">
+                  BENEFICIO ESPECIAL
 
-                ¡Sobrino, disfruta
-                de un delicioso descuento!
-
-              </h2>
-
-              <div class="numero-descuento">
-
-                10<span>%</span>
+                </span>
 
               </div>
 
-              <h3 class="texto-descuento">
+              <div class="cupon-centro">
 
-                DE DESCUENTO
+                <p class="cupon-bienvenida">
 
-              </h3>
-
-              <p class="detalle-descuento">
-
-                En el total de tu consumo
-                en Las Tías Campestre.
-
-              </p>
-
-              <div class="instrucciones-cupon">
-
-                <i class="bi bi-phone"></i>
-
-                <p>
-
-                  Presenta esta página
-                  en tu celular al momento
-                  de pagar y recibe tu descuento.
+                  UN REGALITO PARA TI, SOBRINO
 
                 </p>
 
+                <div class="cupon-porcentaje">
+
+                  10%
+
+                </div>
+
+                <h2 class="cupon-titulo">
+
+                  DE DESCUENTO
+
+                </h2>
+
+                <p class="cupon-descripcion">
+
+                  En el total de tu consumo
+                  en Las Tías Campestre.
+
+                </p>
+
+                <div class="cupon-instrucciones">
+
+                  <i class="bi bi-phone"></i>
+
+                  <span>
+
+                    Muestra esta página en tu
+                    celular al momento de pagar
+                    y recibe tu descuento.
+
+                  </span>
+
+                </div>
+
               </div>
 
-              <div class="sello-promocion">
+              <div class="cupon-inferior">
 
-                PROMOCIÓN ESPECIAL
-                FESTIVAL DEL GLOBO
+                <span>
+
+                  FESTIVAL DEL GLOBO
+
+                </span>
+
+                <span class="cupon-sello">
+
+                  10%
+
+                </span>
 
               </div>
 
-            </div>
+            </article>
+
+            <p class="cupon-aviso text-center">
+
+              Promoción en Las Tías Campestre.
+              Consulta las condiciones y vigencia
+              directamente en el restaurante.
+
+            </p>
 
           </div>
 
@@ -292,68 +413,87 @@
     </section>
 
 
-    <!-- ========== UBICACIÓN ========== -->
+    <!-- ======================================
+         UBICACIÓN - GOOGLE MAPS
+    ====================================== -->
 
-    <section class="seccion-ubicacion"
+    <section class="ubicacion-section"
              id="ubicacion">
 
       <div class="container">
 
-        <div class="text-center">
+        <div class="row align-items-center g-4">
 
-          <span class="subtitulo-ubicacion">
+          <div class="col-12 col-lg-5">
 
-            EL SIGUIENTE DESTINO DE TU ANTOJO
+            <div class="ubicacion-info"
+                 data-animate="fade-up">
 
-          </span>
+              <span class="ubicacion-etiqueta">
 
-          <h2 class="titulo-seccion">
+                NOS VEMOS, SOBRINO
 
-            ¡Te esperamos en Las Tías!
+              </span>
 
-          </h2>
+              <h2 class="ubicacion-titulo">
 
-          <p class="direccion">
+                ¡El mejor plan termina
+                comiendo rico!
 
-            <i class="bi bi-geo-alt-fill"></i>
+              </h2>
 
-            Av. León 1106, León, Guanajuato.
+              <p class="ubicacion-direccion">
 
-          </p>
+                <i class="bi bi-geo-alt-fill"></i>
 
-        </div>
+                Av. León 1106,
+                León, Guanajuato.
 
-        <!-- GOOGLE MAPS -->
+              </p>
 
-        <div class="contenedor-mapa">
+              <p class="ubicacion-horario">
 
-          <iframe
-            src="https://www.google.com/maps?q=Las%20Tias%20Campestre%20Av%20Leon%201106%20Leon%20Guanajuato&output=embed"
-            width="100%"
-            height="300"
-            style="border:0;"
-            allowfullscreen
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Ubicación Las Tías Campestre">
-          </iframe>
+                <i class="bi bi-clock"></i>
 
-        </div>
+                8:00 a.m. a 1:30 p.m.
 
-        <div class="text-center mt-4">
+              </p>
 
-          <a
-            href="https://www.google.com/maps/dir/?api=1&destination=Las%20Tias%20Campestre%20Av%20Leon%201106%20Leon%20Guanajuato"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-maps btn-lg"
-          >
+              <a
+                class="btn btn-lt-maps"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.google.com/maps/dir/?api=1&amp;destination=Las%20T%C3%ADas%20Campestre%2C%20Av.%20Le%C3%B3n%201106%2C%20Le%C3%B3n%2C%20Guanajuato">
 
-            <i class="bi bi-geo-alt-fill me-2"></i>
+                <i class="bi bi-cursor-fill"></i>
 
-            Cómo llegar con Google Maps
+                Cómo llegar
 
-          </a>
+              </a>
+
+            </div>
+
+          </div>
+
+          <div class="col-12 col-lg-7">
+
+            <div class="mapa-contenedor"
+                 data-animate="fade-up">
+
+              <iframe
+                src="https://www.google.com/maps?q=Las%20T%C3%ADas%20Campestre%2C%20Av.%20Le%C3%B3n%201106%2C%20Le%C3%B3n%2C%20Guanajuato&amp;output=embed"
+                width="100%"
+                height="320"
+                style="border:0;"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Ubicación de Las Tías Campestre"
+                allowfullscreen>
+              </iframe>
+
+            </div>
+
+          </div>
 
         </div>
 
@@ -364,66 +504,76 @@
   </main>
 
 
-  <!-- ========== FOOTER ========== -->
+  <!-- ======================================
+       FOOTER
+  ====================================== -->
 
   <footer class="footer-las-tias">
 
-    <div class="container text-center">
+    <div class="container">
 
-      <img
-        src="assets/logo-las-tias.png"
-        alt="Las Tías"
-        class="logo-footer"
-      >
+      <div class="footer-contenido">
 
-      <p class="frase-footer">
+        <img
+          src="assets/logo-las-tias.png"
+          alt="Las Tías"
+          class="footer-logo">
 
-        ¡El mejor plan termina comiendo rico!
+        <p>
 
-      </p>
+          Con cariño, para la familia.
 
-      <div class="redes-footer d-flex
-                  justify-content-center gap-4">
+        </p>
 
-        <a
-          href="https://www.instagram.com/lastiascampestre/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Instagram"
-        >
-          <i class="bi bi-instagram"></i>
-        </a>
+        <div class="footer-redes">
 
-        <a
-          href="https://www.facebook.com/REEMPLAZAR_PAGINA"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Facebook"
-        >
-          <i class="bi bi-facebook"></i>
-        </a>
+          <a
+            href="https://www.instagram.com/lastiascampestre/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram">
+
+            <i class="bi bi-instagram"></i>
+
+          </a>
+
+          <a
+            href="href="https://www.facebook.com/lastiascampestre""
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook">
+
+            <i class="bi bi-facebook"></i>
+
+          </a>
+
+        </div>
 
       </div>
-
-      <p class="copyright">
-
-        Las Tías Campestre · León, Guanajuato
-
-      </p>
 
     </div>
 
   </footer>
 
 
-  <!-- BOOTSTRAP JAVASCRIPT -->
+  <!-- BOTÓN FLOTANTE MÓVIL -->
 
+  <a href="#descuento"
+     class="mobile-cupon-link">
+
+    <i class="bi bi-ticket-perforated"></i>
+
+    Ver mi 10% de descuento
+
+  </a>
+
+
+  <!-- BOOTSTRAP JS -->
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
   </script>
 
-  <!-- ANIMACIONES PERSONALIZADAS -->
-
+  <!-- JAVASCRIPT PERSONALIZADO -->
   <script src="script.js" defer></script>
 
 </body>
